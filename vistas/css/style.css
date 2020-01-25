@@ -14,6 +14,7 @@ ul, ol{
 	list-style: none;
 }
 
+
 a:visited, a:link, a:focus, a:hover, a:active{
 	list-style: none;
 	text-decoration: none;
@@ -49,12 +50,12 @@ header .bloqueReservas .campana-y-reserva{
 }
 
 header .bloqueReservas .fa-concierge-bell{
-	font-size:25px; 
+	font-size:25px;
 	color:#847059;
 }
 
 header .bloqueReservas .fa-caret-down, header .bloqueReservas .fa-caret-up{
-	font-size:25px; 
+	font-size:25px;
 	color:#236AA1;
 }
 
@@ -78,7 +79,7 @@ header .formReservas input[type="button"]{
 }
 
 header .fa-user{
-	font-size:25px; 
+	font-size:25px;
 	color:#DFDAD4;
 	cursor:pointer;
 }
@@ -88,7 +89,7 @@ header .idiomas span{
 }
 
 header .botonMenu i{
-	font-size:30px; 
+	font-size:30px;
 	color:#B5A99B;
 	cursor:pointer;
 }
@@ -120,7 +121,7 @@ nav.menu li:hover > .nav-link{
 	width:100%;
 	height:90vh;
 	z-index:2;
-	overflow-x: hidden;  
+	overflow-x: hidden;
 }
 
 .menuMovil .formReservas input[type="button"]{
@@ -251,7 +252,7 @@ HABITACIONES
 }
 
 .habitaciones .row div[class*="col"] figure p{
-	background:black; 
+	background:black;
 	color:#aaa;
 	padding-left:0;
 	padding-right:0;
@@ -318,9 +319,9 @@ RESTAURANTE
 }
 
 .restaurante .grid-item:nth-child(2){
-	position:relative; 
+	position:relative;
 	z-index:1;
-	top:-60px; 
+	top:-60px;
 	height:600px;
 	background:#847059;
 }
@@ -351,8 +352,8 @@ MAPA
 	color: #8B7556;
 	position:absolute;
 	width:400px;
-	right:10%; 
-	top:10%; 
+	right:10%;
+	top:10%;
 	background-color: #FFCC29;
 	height:370px;
 }
@@ -365,7 +366,21 @@ MAPA
 /*=============================================
 FOOTER
 =============================================*/
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+	border-color: #007bff;
+	margin-top: 10px;
+}
 
+.contactenos .form-control {
+
+
+	border-radius: 10px !important;
+	padding: 6px !important;
+	width: 100% !important;
+	margin-top: 10px !important;
+}
 footer .grid-container{
 	display:grid;
 	grid-template-columns: 2fr 4fr 2fr;
@@ -376,6 +391,7 @@ footer .grid-item{
 	text-align:center;
 	color:white;
 }
+
 
 .redesMovil{
 	visibility: hidden;
@@ -408,7 +424,7 @@ TABLET VERTICAL (MD revisamos en 768px hacia abajo)
 		grid-template-columns:4fr 1fr;
 	}
 
-	.planes .grid-container{	
+	.planes .grid-container{
 		grid-template-columns: auto;
 	}
 
@@ -446,8 +462,8 @@ TABLET VERTICAL (MD revisamos en 768px hacia abajo)
 	.mapa .info{
 		position:absolute;
 		width:90%;
-		left:50%; 
-		top:100px; 
+		left:50%;
+		top:100px;
 		transform: translate(-50%, 0%);
 		background-color: #FFCC29;
 		height:350px;

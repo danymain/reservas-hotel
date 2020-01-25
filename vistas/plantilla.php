@@ -133,6 +133,7 @@ if(isset($_GET["pagina"])){
 
 	}
 
+
 }else{
 
 	include "paginas/inicio.php";

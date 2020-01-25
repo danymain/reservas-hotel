@@ -5,21 +5,28 @@ CONTÁCTENOS
 	<div class="container text-center">
 		<h1 class="py-sm-4">CONTÁCTENOS</h1>
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-			<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre:" value="<?php if(!$enviado && isset($nombre)) echo $nombre?>">
-			<input type="text" class="form-control" name="correo" id="correo" placeholder="Correo:" value="<?php if(!$enviado && isset($correo)) echo $correo?>">
+			<input type="text" class="form-control " name="nombre" id="nombre" placeholder="Nombre:" value="<?php if(!$enviado && isset($nombre)) echo $nombre?>">
+			<input type="text" class="form-control " name="correo" id="correo" placeholder="Correo:" value="<?php if(!$enviado && isset($correo)) echo $correo?>">
 
-			<select  type="text"  class="form-control form-control-lg" name="tipo" id="tipo" value="<?php if(!$enviado && isset($tipo)) echo $tipo?>" >
+			<select  type="text"  class="form-control " name="tipo" id="tipo" value="<?php if(!$enviado && isset($tipo)) echo $tipo?>" >
 				<option>Tipo de habitación</option>
 				<option>Suite</option>
 				<option>Especial</option>
 				<option>Estandar</option>
 			</select>
 
-			<input type="text" class="form-control datepicker entrada" name="entrada" id="entrada" placeholder="Entrada"  value="<?php if(!$enviado && isset($entrada)) echo $entrada?>">
+			<div class="row">
+			 <div class="col-6 ">
+			 <input type="text" class="form-control datepicker entrada" name="entrada" id="entrada" placeholder="Entrada"  value="<?php if(!$enviado && isset($entrada)) echo $entrada?>">
+			</div>
+			<div class="col-6 ">
 			<input type="text" class="form-control datepicker salida" name="salida" id="salida" placeholder="Salida"  value="<?php if(!$enviado && isset($salida)) echo $salida?>">
+			</div>
+		</div>
 
 
-			<textarea name="mensaje" class="form-control" id="mensaje" placeholder="Mensaje:"><?php if(!$enviado && isset($mensaje)) echo $mensaje?></textarea>
+
+			<textarea name="mensaje" class="form-control " id="mensaje" placeholder="Mensaje:"><?php if(!$enviado && isset($mensaje)) echo $mensaje?></textarea>
 			<?php if (!empty($errores)): ?>
 				<div class="alert error" role="alert">
 					<?php echo $errores; ?>
@@ -27,9 +34,10 @@ CONTÁCTENOS
 			<?php elseif($enviado) : ?>
 				<div class="alert success" role="alert">
 					<?php echo '<script type="text/javascript">
-									alert("Reservacion enviada con exito en breve te enviaremos una repsuesta a tu correo electronico");
-   								 window.location.href="http://localhost/reservas-hotel/index.php";
-   								 </script>';  ?>
+									alert("Reservacion enviada con exito en breve te enviaremos una respuesta a tu correo electronico");
+
+									</script>';  ?>
+									<!-- window.location.href="http://localhost/reservas-hotel/index.php"; -->
 				</div>
 			<?php endif; ?>
 			<input type="submit" name="submit" class="btn btn-primary" value="Enviar Correo">
