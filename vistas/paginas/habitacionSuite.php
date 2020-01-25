@@ -1,7 +1,7 @@
 <?php
 
 include "modulos/banner-interior.php";
-include "modulos/info-habitaciones.php";
+include "modulos/info-habitacionSuite.php";
 include "modulos/testimonios.php";
 include "modulos/planes.php";
 include "modulos/planes-movil.php";

@@ -101,11 +101,25 @@ PÁGINAS
 
 if(isset($_GET["pagina"])){
 
-	if($_GET["pagina"] == "habitaciones"){
+	if($_GET["pagina"] == "habitacionSuite"){
 
-		include "paginas/habitaciones.php";
+		include "paginas/habitacionSuite.php";
+
 
 	}
+	if($_GET["pagina"] == "habitacionEspecial"){
+
+		include "paginas/habitacionEspecial.php";
+
+
+	}
+	if($_GET["pagina"] == "habitacionEstandar"){
+
+		include "paginas/habitacionEstandar.php";
+
+
+	}
+
 
 	if($_GET["pagina"] == "reservas"){
 
@@ -185,7 +199,7 @@ if (isset($_POST['submit'])) {
 		$mensaje.= "Correo: $correo \n";
 		$mensaje.= 'Mensaje: ' . $_POST['mensaje'];
 
-	//  mail($enviar_a, $asunto, $mensaje);
+	  mail($enviar_a, $asunto, $mensaje);
 		$enviado = 'true';
 
 	}
