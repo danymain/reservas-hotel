@@ -156,6 +156,9 @@ $enviado = '';
 if (isset($_POST['submit'])) {
 	$nombre = $_POST['nombre'];
 	$correo = $_POST['correo'];
+	$tipo = $_POST['tipo'];
+	$entrada = $_POST['entrada'];
+	$salida = $_POST['salida'];
 	$mensaje = $_POST['mensaje'];
 
 // Comprobamos que el nombre no este vacio.
@@ -170,6 +173,43 @@ if (isset($_POST['submit'])) {
 	} else {
 		$errores.= 'Por favor ingresa un nombre.<br />';
 	}
+
+	if (!empty($tipo)) {
+		// Sabeamos el nombre para eliminar caracteres que no deberian estar.
+		// $nombre = trim($nombre);
+		// $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
+		// Comprobamos que el nombre despues de quitar los caracteres ilegales no este vacio.
+		if ($tipo == "") {
+			$errores.= 'Por favor ingresa una tipoo.<br />';
+		}
+	} else {
+		$errores.= 'Por favor ingresa una tipo.<br />';
+	}
+
+	if (!empty($entrada)) {
+		// Sabeamos el nombre para eliminar caracteres que no deberian estar.
+		// $nombre = trim($nombre);
+		// $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
+		// Comprobamos que el nombre despues de quitar los caracteres ilegales no este vacio.
+		if ($entrada == "") {
+			$errores.= 'Por favor ingresa un entrada.<br />';
+		}
+	} else {
+		$errores.= 'Por favor ingresa un entrada<br />';
+	}
+
+	if (!empty($salida)) {
+		// Sabeamos el nombre para eliminar caracteres que no deberian estar.
+		// $nombre = trim($nombre);
+		// $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
+		// Comprobamos que el nombre despues de quitar los caracteres ilegales no este vacio.
+		if ($salida == "") {
+			$errores.= 'Por favor ingresa una salida.<br />';
+		}
+	} else {
+		$errores.= 'Por favor ingresa una salida.<br />';
+	}
+
 
 	if (!empty($correo)) {
 		$correo = filter_var($correo, FILTER_SANITIZE_EMAIL);
@@ -197,9 +237,12 @@ if (isset($_POST['submit'])) {
 		$asunto = 'Correo enviado desde HOTEL MAR Y SOL';
 		$mensaje = "De: $nombre \n";
 		$mensaje.= "Correo: $correo \n";
+		$mensaje.= "Tipo: $tipo \n";
+		$mensaje.= "Entrada: $entrada \n";
+		$mensaje.= "Salida: $salida \n";
 		$mensaje.= 'Mensaje: ' . $_POST['mensaje'];
 
-	  mail($enviar_a, $asunto, $mensaje);
+  mail($enviar_a, $asunto, $mensaje);
 		$enviado = 'true';
 
 	}
