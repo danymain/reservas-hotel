@@ -252,7 +252,7 @@ if (isset($_POST['submit'])) {
 // require 'modulos/index.view.php';
 
 
-
+include "paginas/modulos/header.php";
 include "paginas/modulos/footer.php";
 
 include "paginas/modulos/modal.php";

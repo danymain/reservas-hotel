@@ -32,7 +32,7 @@ header{
 
 header .grid-container{
 	display:grid;
-	grid-template-columns: 3fr 5fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 3fr 6fr 1fr 2fr;
 }
 
 header .grid-item{
@@ -61,12 +61,30 @@ header .bloqueReservas .fa-caret-down, header .bloqueReservas .fa-caret-up{
 
 header .formReservas{
 	position: absolute;
-    top: 52px;
+	top: 52px;
+
     width: 350px;
     height: auto;
-    left:0px;
+    left:-80px;
     z-index: 2;
     background: rgba(0, 83, 147, .8);
+}
+header .formReservas form input{
+
+
+	margin-top: 2px !important;
+
+}
+header .formReservas form select{
+
+
+	margin-top: 2px !important;
+
+}
+header .formReservas form textarea{
+
+	margin-top: 2px !important;
+
 }
 
 header .formReservas .input-group-lg input, header .formReservas select{

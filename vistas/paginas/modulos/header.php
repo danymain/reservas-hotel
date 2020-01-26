@@ -5,7 +5,7 @@ HEADER
 	<div class="container p-0">
 		<div class="grid-container py-2">
 			<!-- LOGO -->
-			<div class="grid-item">
+			<div class="grid-item ">
 				<a href="<?php echo $ruta;  ?>">
 					<img src="img/logoPortobelo.png" class="img-fluid">
 				</a>
@@ -22,12 +22,45 @@ HEADER
 				======================================-->
 				<div class="formReservas py-1 py-lg-2 px-4">
 					<div class="form-group my-4">
-						<select class="form-control form-control-lg">
+					<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+			<input type="text" class="form-control " name="nombre" id="nombre" placeholder="Nombre:" value="<?php if(!$enviado && isset($nombre)) echo $nombre?>">
+			<input type="text" class="form-control " name="correo" id="correo" placeholder="Correo:" value="<?php if(!$enviado && isset($correo)) echo $correo?>">
+
+			<select  type="text"  class="form-control " name="tipo" id="tipo" value="<?php if(!$enviado && isset($tipo)) echo $tipo?>" >
+				<option>Tipo de habitación</option>
+				<option>Suite</option>
+				<option>Especial</option>
+				<option>Estandar</option>
+			</select>
+
+			<div class="row">
+			 <div class="col-6 ">
+			 <input type="text" class="form-control datepicker entrada" name="entrada" id="entrada" placeholder="Entrada"  value="<?php if(!$enviado && isset($entrada)) echo $entrada?>">
+
+			</div>
+			<div class="col-6 ">
+			<input type="text" class="form-control datepicker salida" name="salida" id="salida" placeholder="Salida"  value="<?php if(!$enviado && isset($salida)) echo $salida?>">
+			</div>
+		</div>
+
+
+
+			<textarea name="mensaje" class="form-control " id="mensaje" placeholder="Mensaje:"><?php if(!$enviado && isset($mensaje)) echo $mensaje?></textarea>
+			<?php if (!empty($errores)): ?>
+				<div class="alert error" role="alert">
+					<?php echo $errores; ?>
+				</div>
+
+			<?php endif; ?>
+			<input type="submit" name="submit" class="btn btn-primary" value="Enviar Correo">
+		</form>
+
+							<!-- <select class="form-control form-control-lg">
 							<option>Tipo de habitación</option>
 							<option>Suite</option>
 							<option>Especial</option>
 							<option>Estandar</option>
-						</select>
+						</select> -->
 					</div>
 					<!-- <div class="form-group my-4">
 						<select class="form-control form-control-lg">
@@ -39,7 +72,7 @@ HEADER
 							<option>Retro</option>
 						</select>
 					</div> -->
-					<div class="row">
+					<!-- <div class="row">
 						 <div class="col-6 input-group input-group-lg pr-1">
 							<input type="text" class="form-control datepicker entrada" placeholder="Entrada">
 							<div class="input-group-append">
@@ -56,21 +89,21 @@ HEADER
 								</span>
 							</div>
 						</div>
-					</div>
-					<input type="button" class="btn btn-block btn-lg my-4 text-white" value="Ver disponibilidad">
+					</div> -->
+					<!-- <input type="button" class="btn btn-block btn-lg my-4 text-white" value="Ver disponibilidad"> -->
 				</div>
 			</div>
 			<!-- INGRESO DE USUARIOS -->
-			<div class="grid-item d-none d-lg-block mt-2">
+			<!-- <div class="grid-item d-none d-lg-block mt-2">
 				<a href="#modalIngreso" data-toggle="modal"><i class="fas fa-user"></i></a>
-			</div>
+			</div> -->
 			<!-- SELECCIÓN DE IDIOMA -->
-			<div class="grid-item d-none d-lg-block mt-1 idiomas">
+			<!-- <div class="grid-item d-none d-lg-block mt-1 idiomas">
 				<span class="border border-info float-left p-1 bg-info text-white idiomaEs">ES</span>
 				<span class="border border-info float-left p-1 bg-white text-dark idiomaEn">EN</span>
-			</div>
+			</div> -->
 			<!-- MENÚ HAMBURGUESA -->
-			<div class="grid-item mt-1 mt-sm-3 mt-md-4 mt-lg-2 botonMenu">
+			<div class="grid-item mt-2 mt-sm-2 mt-md-2 mt-lg-2 botonMenu">
 				<i class="fas fa-bars lead"></i>
 			</div>
 		</div>
@@ -126,21 +159,21 @@ MENÚ
 MENÚ MÓVIL
 ======================================-->
 <div class="menuMovil">
-	<div class="row">
-		<div class="col-6">
+	<!-- <div class="row"> -->
+		<!-- <div class="col-6">
 			<a href="#modalIngreso" data-toggle="modal">
 				<i class="fas fa-user lead ml-3 mt-4"></i>
 			</a>
-		</div>
-		<div class="col-6">
+		</div> -->
+		<!-- <div class="col-6">
 			<div class="float-right mr-3 mt-3 mr-sm-5 mt-sm-4">
 				<span class="border border-info float-left p-1 bg-info text-white idiomaEs">ES</span>
 				<span class="border border-info float-left p-1 bg-white text-dark idiomaEn">EN</span>
 			</div>
-		</div>
-	</div>
-	<div class="formReservas py-1 py-lg-2 px-4">
-		<div class="form-group my-4">
+		</div> -->
+	<!-- </div> -->
+	 <!-- <div class="formReservas py-1 py-lg-2 px-4">
+		 <div class="form-group my-4">
 			<select class="form-control form-control-lg">
 				<option>Tipo de habitación</option>
 				<option>Suite</option>
@@ -148,7 +181,7 @@ MENÚ MÓVIL
 				<option>Standar</option>
 			</select>
 		</div>
-		<div class="form-group my-4">
+		 <div class="form-group my-4">
 			<select class="form-control form-control-lg">
 				<option>Temática de habitación</option>
 				<option>Oriental</option>
@@ -157,8 +190,8 @@ MENÚ MÓVIL
 				<option>Clásica</option>
 				<option>Retro</option>
 			</select>
-		</div>
-		<div class="row">
+		</div> -->
+		 <!-- <div class="row">
 			 <div class="col-6 input-group input-group-lg pr-1">
 				<input type="text" class="form-control datepicker entrada" placeholder="Entrada">
 				<div class="input-group-append">
@@ -175,9 +208,9 @@ MENÚ MÓVIL
 					</span>
 				</div>
 			</div>
-		</div>
-		<input type="button" class="btn btn-block btn-lg my-4 text-white" value="Ver disponibilidad">
-	</div>
+	 </div> -->
+		<!-- <input type="button" class="btn btn-block btn-lg my-4 text-white" value="Ver disponibilidad"> -->
+	<!-- </div> -->
 	<ul class="nav flex-column mt-4 pl-4 mb-5">
 		<li class="nav-item">
 			<a class="nav-link text-white my-2" href="#planesMovil">Planes</a>
