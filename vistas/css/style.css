@@ -24,20 +24,8 @@ a:visited, a:link, a:focus, a:hover, a:active{
 HEADER
 =============================================*/
 
-header{
-	position:fixed;
-	top:0;
-	z-index:3;
-}
 
-header .grid-container{
-	display:grid;
-	grid-template-columns: 3fr 6fr 1fr 2fr;
-}
 
-header .grid-item{
-	text-align:center;
-}
 
 header .bloqueReservas{
 	position:relative;

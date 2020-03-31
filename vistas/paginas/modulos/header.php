@@ -23,11 +23,11 @@ HEADER
 				<div class="formReservas py-1 py-lg-2 px-4">
 					<div class="form-group my-4">
 					<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-			<input type="text" class="form-control " name="nombre" id="nombre" placeholder="Nombre:" value="<?php if(!$enviado && isset($nombre)) echo $nombre?>">
-			<input type="text" class="form-control " name="correo" id="correo" placeholder="Correo:" value="<?php if(!$enviado && isset($correo)) echo $correo?>">
+			<input type="text" class="form-control " name="nombre" id="nombre" placeholder="Nombre:*" value="<?php if(!$enviado && isset($nombre)) echo $nombre?>">
+			<input type="text" class="form-control " name="correo" id="correo" placeholder="Correo:*" value="<?php if(!$enviado && isset($correo)) echo $correo?>">
 
 			<select  type="text"  class="form-control " name="tipo" id="tipo" value="<?php if(!$enviado && isset($tipo)) echo $tipo?>" >
-				<option>Tipo de habitación</option>
+				<option>Tipo de habitación:*</option>
 				<option>Suite</option>
 				<option>Especial</option>
 				<option>Estandar</option>
@@ -35,11 +35,11 @@ HEADER
 
 			<div class="row">
 			 <div class="col-6 ">
-			 <input type="text" class="form-control datepicker entrada" name="entrada" id="entrada" placeholder="Entrada"  value="<?php if(!$enviado && isset($entrada)) echo $entrada?>">
+			 <input type="text" class="form-control datepicker entrada" name="entrada" id="entrada" placeholder="Entrada:*"  value="<?php if(!$enviado && isset($entrada)) echo $entrada?>">
 
 			</div>
 			<div class="col-6 ">
-			<input type="text" class="form-control datepicker salida" name="salida" id="salida" placeholder="Salida"  value="<?php if(!$enviado && isset($salida)) echo $salida?>">
+			<input type="text" class="form-control datepicker salida" name="salida" id="salida" placeholder="Salida:*"  value="<?php if(!$enviado && isset($salida)) echo $salida?>">
 			</div>
 		</div>
 

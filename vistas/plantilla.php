@@ -162,6 +162,7 @@ if (isset($_POST['submit'])) {
 	$salida = $_POST['salida'];
 	$mensaje = $_POST['mensaje'];
 
+
 // Comprobamos que el nombre no este vacio.
 	if (!empty($nombre)) {
 		// Sabeamos el nombre para eliminar caracteres que no deberian estar.
@@ -171,20 +172,25 @@ if (isset($_POST['submit'])) {
 		if ($nombre == "") {
 			$errores.= 'Por favor ingresa un nombre.<br />';
 		}
-	} else {
-		$errores.= 'Por favor ingresa un nombre.<br />';
+	}
+	else {
+		$errores.= 'Por favor ingresa un nombre.<br />
+
+		';
+
 	}
 
-	if (!empty($tipo)) {
+	if (!empty($tipo)&& ($tipo) !='Tipo de habitación') {
 		// Sabeamos el nombre para eliminar caracteres que no deberian estar.
 		// $nombre = trim($nombre);
 		// $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
 		// Comprobamos que el nombre despues de quitar los caracteres ilegales no este vacio.
 		if ($tipo == "") {
-			$errores.= 'Por favor ingresa una tipoo.<br />';
+			$errores.= 'Por favor ingresa un tipo de habitación.<br />';
 		}
 	} else {
-		$errores.= 'Por favor ingresa una tipo.<br />';
+		$errores.= 'Por favor ingresa un tipo de habitación.<br />
+';
 	}
 
 	if (!empty($entrada)) {
@@ -196,7 +202,8 @@ if (isset($_POST['submit'])) {
 			$errores.= 'Por favor ingresa un entrada.<br />';
 		}
 	} else {
-		$errores.= 'Por favor ingresa un entrada<br />';
+		$errores.= 'Por favor ingresa un entrada<br />
+		';
 	}
 
 	if (!empty($salida)) {
@@ -208,7 +215,7 @@ if (isset($_POST['submit'])) {
 			$errores.= 'Por favor ingresa una salida.<br />';
 		}
 	} else {
-		$errores.= 'Por favor ingresa una salida.<br />';
+		 $errores.= 'Por favor ingresa una salida.<br />';
 	}
 
 
@@ -222,15 +229,20 @@ if (isset($_POST['submit'])) {
 		$errores.= 'Por favor ingresa un correo.<br />';
 	}
 
+if(!$errores==""){
+	echo'<script type="text/javascript">
+	alert("Ingresa todos los datos requeridos marcados con (*)")
+	</script>';
 
-	if (!empty($mensaje)) {
-		// Podemos sanear la cadena de texto con filter_var, pero queremos que en el mensaje los signos se conviertan en entidades HTML
-		$mensaje = htmlspecialchars($mensaje);
-		$mensaje = trim($mensaje);
-		$mensaje = stripslashes($mensaje);
-	} else {
-		$errores.= 'Por favor ingresa el mensaje.<br />';
-	}
+}
+	// if (!empty($mensaje)) {
+	// 	// Podemos sanear la cadena de texto con filter_var, pero queremos que en el mensaje los signos se conviertan en entidades HTML
+	// 	$mensaje = htmlspecialchars($mensaje);
+	// 	$mensaje = trim($mensaje);
+	// 	$mensaje = stripslashes($mensaje);
+	// } else {
+	// 	$errores.= 'Por favor ingresa el mensaje.<br />';
+	// }
 
 // Comprobamos si hay errores, si no hay entonces enviamos.
 	if (!$errores) {
